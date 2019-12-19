@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -18,14 +17,10 @@ func maxMin(k int32, arr []int32) int32 {
 	var temp int32
 
 	sort.Sort(myArr)
-	fmt.Println("")
-	fmt.Println("k:", k)
-	fmt.Println("myArr:", myArr)
 
 	unfairness = myArr[k-1] - myArr[0]
 
 	for i := int32(0); i <= arrLength-k; i++ {
-		fmt.Println(myArr[i], myArr[i+k-1], "=", (myArr[i+k-1] - myArr[i]))
 		temp = myArr[i+k-1] - myArr[i]
 		if temp < unfairness {
 			unfairness = temp
